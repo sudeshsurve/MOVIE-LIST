@@ -21,7 +21,7 @@ export class MovieListingComponent implements OnInit {
       this.data = res
       this.poster = res.series
       // console.log(this.data.characters[0].img);
-      console.log(this.poster);
+      console.log(this.data);
       
     })
   }

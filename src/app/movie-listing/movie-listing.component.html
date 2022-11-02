@@ -19,12 +19,18 @@
     </div>
     <div class="row">
         <div class="col">
-            
-                <h1 class="text-white">{{poster.title}} </h1> 
-     
-
+               
+<h1 class="text-white">{{poster.title}} </h1> 
         </div>
     </div>
+
+    <div class="row ">
+        <div class="col">
+            <p class="text-white fs-5 text">{{poster.desc}}</p>
+        </div>
+    </div>
+
+
 
     <div class="row">
         <div class="col d-flex align-items-center gap-2" >
@@ -52,30 +58,67 @@
    </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-1">
         <div class="col d-flex gap-2">
             <button type="submit" class="btn btn-danger" style="background-color: #e50914;"><span class="bi-play-fill"></span> Watch Now</button>
             <button type="submit" class="btn btn-secondary"><span class="bi-arrow-down-circle"></span> Download</button>
         </div>
     </div>
+
+    
 </div>  
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <p class="text-white fs-6 text">{{poster.desc}}</p>
-        </div>
-    </div>
+<!-- <div class="container">
+   
 
-</div>
+</div> -->
 
+<!-- <div class="d-flex"> -->
 
-<div class="container">
+ <!-- <div class="container mt-5" *ngFor="let item of data.characters">
    <div class="row">
-
-    <div class="col-3" *ngFor="let item of data.characters">
-        <img class="img-fluid" src= "https://demo.tech2edge.co/samples/{{item.img}}">
+    <div class="col col-lg-4 col-sm-12 d-flex " >
+        <div class="card">
+            <img src="https://demo.tech2edge.co/samples/{{item.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}(<span>{{item.profession}}</span>)</h5>
+            </div>
+          </div>
     </div>
    </div>
-</div>
+</div>  -->
+
+
+<table class="table container mb-5">   
+    <tbody class="d-block justify-content-cneter ">
+      <tr *ngFor="let item of data.characters , let i = index">
+        <th scope="row" style="color: #ffffff ;">{{i+1}}</th>
+        <td>
+            <div class="container mt-5">
+                <div class="row">
+                 <div class="col col-lg-6 col-sm-12 d-flex " >
+                     <!-- <img class="img-fluid" src= "https://demo.tech2edge.co/samples/{{item.img}}"> -->
+                     <div class="card">
+                         <img src="https://demo.tech2edge.co/samples/{{item.img}}" class="card-img-top" alt="...">
+                         <div class="card-body">
+                           <h5 class="card-title">{{item.name}}(<span>{{item.profession}}</span>)</h5>
+                           <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                         </div>
+                       </div>
+                 </div>
+                </div>
+             </div> 
+        </td>  
+        <!-- <td>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi magni reiciendis sunt ex nihil provident ut, eum neque tenetur explicabo libero nam vitae itaque porro voluptas soluta ducimus aperiam maxime!</p>
+        </td> -->
+      </tr>
+
+
+    </tbody>
+  </table>
+
+<!-- </div> -->
+
+
