@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { characters, series } from '../data-type';
 
 @Component({
   selector: 'app-movie-listing',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-listing.component.css']
 })
 export class MovieListingComponent implements OnInit {
-  data :any = []
-  poster : any 
-
+  data :characters[] =[]
+  poster : any  ={}
   ratting : string =""
 
   
@@ -17,12 +17,10 @@ export class MovieListingComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get('https://demo.tech2edge.co/samples/data-sg')
-    .subscribe((res:any)=>{
-      this.data = res
+    .subscribe((res:characters | series | any)=>{
+      this.data = res.characters
       this.poster = res.series
-      // console.log(this.data.characters[0].img);
-      console.log(this.data);
-      
+      // console.log(res);
     })
   }
 

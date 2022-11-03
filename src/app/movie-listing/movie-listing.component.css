@@ -1,3 +1,6 @@
 nav{
     border-bottom: 5px solid #ffffff;
 }
+ p{
+    cursor: pointer;
+ }
